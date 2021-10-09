@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dropdown::-webkit-scrollbar {
+  width: 10px;
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+  background: #88666c;
+  border-radius: 10px;
+}
+
+.dropdown::-webkit-scrollbar-thumb:hover {
+  background: #e2c2b3;
+}
+
+.no-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+@layer components {
+  /* navbar animation */
+  .link {
+    @apply flex px-3 py-4 gap-2 items-center relative hover:text-white transition-colors delay-200 before:absolute before:top-0 before:left-0 before:h-full before:w-1 before:bg-primary  before:scale-y-0 hover:before:scale-y-100 active:before:bg-primary-light hover:before:w-full;
+  }
+
+  h3 {
+    @apply my-5 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary-dark text-xl;
+  }
+
+  .accordion a {
+    @apply text-blue-600 hover:text-blue-500;
+  }
+}
+
+/* navbar animation */
+.item::before {
+  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+    background-color 0.1s !important;
+}
